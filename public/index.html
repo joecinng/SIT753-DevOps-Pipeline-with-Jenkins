@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIT 725 Prac 3</title>
+    <meta name="author" content="Joe">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="main-body">
+    <!-- Navigation bar -->
+    <nav>
+        <div class="nav-wrapper navbar-size">
+            <a href="#" class="brand-logo">
+                <img class="user-image-size" src="images/user-image.png"/>
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a target="_blank" href="https://linkedin.com/in/joe-cin-ng-457a61243">LinkedIn</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <h3 class="center-align">Welcome to SIT 725 Week 3</h3>
+    <p class="center-align">Task 3.2P</p>
+    <p class="center-align">This is a demo application that tries to use a few components from materialize and through this practical we try to have some fun with Materialize and its components.</p>
+    
+    <div class="container">
+        <!-- Image -->
+        <img class="materialboxed-image" src="images/livedemo.png" alt="live demo">
+        <!-- Button -->
+        <div class="center-align">
+            <a class="waves-effect waves-light btn modal-trigger click-me-button" href="#modal1"><i class="material-icons left">auto_fix_high</i>Click Me</a>
+        </div>
+        <!-- Card boxes -->
+        <div class="row" id="card-section"></div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer">
+        <div class="row modal-content">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 center-align">
+                        <a class="waves-effect waves-light btn" id="formSubmit">submit</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
