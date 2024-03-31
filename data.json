@@ -1,18 +1,18 @@
 {
     title: "Kitten 1",
     color: "white, black", 
-    path: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dailypaws.com%2Fliving-with-pets%2Fpet-compatibility%2Fblack-and-white-cat-breeds&psig=AOvVaw2mIZlfcB09ednlb4hBD_GK&ust=1711788977823000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMi7zISNmYUDFQAAAAAdAAAAABAE",
-    desciption: "Demo desciption about kitten 1"
+    path: "https://www.dailypaws.com/thmb/I-vg2jOlQFhan66kDxRyNZOmWOc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/black-and-white-maine-coon-1049979626-2000-82a6069a27704095ad1ad9cb8ec54e5d.jpg",
+    description: "Demo desciption about kitten 1"
 },
 {
     title: "Kitten 2",
     color: "orange", 
-    path: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.womansday.com%2Flife%2Fpet-care%2Fg46008728%2Forange-cat-breeds%2F&psig=AOvVaw1jHM-fW7AtxTKz5a_aY4fM&ust=1711789814132000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLCC85GQmYUDFQAAAAAdAAAAABAE",
-    desciption: "Demo desciption about kitten 2"
+    path: "https://hips.hearstapps.com/hmg-prod/images/playful-golden-british-shorthair-cat-royalty-free-image-1701453627.jpg?crop=0.699xw:1.00xh;0.141xw,0&resize=980:*",
+    description: "Demo desciption about kitten 2"
 },
 {
     title: "Kitten 3",
     color: "yellow, brown", 
-    path: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.litter-robot.com%2Fblog%2Fcat-eye-colors%2F&psig=AOvVaw3aBdWufLe76Ta8ujvMHc91&ust=1711789876286000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJjQ0rCQmYUDFQAAAAAdAAAAABAE",
-    desciption: "Demo desciption about kitten 3"
+    path: "https://www.litter-robot.com/media/wysiwyg/alecsander-alves-siamese.jpg",
+    description: "Demo desciption about kitten 3"
 }
