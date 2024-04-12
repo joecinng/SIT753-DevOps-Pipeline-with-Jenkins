@@ -13,13 +13,13 @@ const addCards = (items) => {
 
 const postcards = (formData) => {
     // make a request to store the cat data
-    $.post('/api/cats', formData, (response) => {
+    $.post('/api/cats', formData, async (response) => {
         if (response.statusCode == 201) {
             console.log('Cat added successfully:', response.data);
-            alert('Cat added successfully');
+            await alert('Cat added successfully');
         } else {
             console.error('Error adding cat:', response.message);
-            alert('Error adding cat');
+            await alert('Error adding cat');
         }
     });
 }
