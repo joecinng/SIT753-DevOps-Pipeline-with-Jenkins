@@ -1,23 +1,26 @@
 {
-  "name": "sit725-2024-t1-prac5",
+  "name": "sit725-2024-t1-prac6",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joecinng/sit725-2024-t1-prac5.git"
+    "url": "git+https://github.com/joecinng/sit725-2024-t1-prac6.git"
   },
   "author": "Joe Cin NG",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/joecinng/sit725-2024-t1-prac5/issues"
+    "url": "https://github.com/joecinng/sit725-2024-t1-prac6/issues"
   },
-  "homepage": "https://github.com/joecinng/sit725-2024-t1-prac5#readme",
+  "homepage": "https://github.com/joecinng/sit725-2024-t1-prac6#readme",
   "dependencies": {
+    "chai": "^4.4.1",
     "express": "^4.18.3",
-    "mongodb": "^6.5.0"
+    "mocha": "^10.4.0",
+    "mongodb": "^6.5.0",
+    "request": "^2.88.2"
   }
 }
