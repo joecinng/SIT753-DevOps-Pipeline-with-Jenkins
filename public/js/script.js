@@ -45,10 +45,15 @@ const submitForm = () => {
 }
 
 $(document).ready(function() {
+    // connect to the server to console.log the random number
+    let socket = io();
+    socket.on('number', (msg) => {
+        console.log('Random Number: ', + msg);
+    });
     $('.materialboxed-image').materialbox();
     $('#formSubmit').click(()=>{ 
         submitForm();
     })
     getcards();
-    $('.modal').modal();
+    $('.modal').modal();    
 });

@@ -1,6 +1,9 @@
 // Import modules
 var express = require("express");
 var app = express();
+// import http and socket.io libraries
+var http = require('http').createServer(app);
+var io = require('socket.io')(http);
 
 // MIDDLEWARE functions:
 // Used to serve static files like html, css
@@ -29,8 +32,20 @@ let catsRoute = require('./Routers/catRouter');
 // Use routes
 app.use('/api/cats',catsRoute);
 
-var port = process.env.port || 3000;
+// define socket.io behaviour
+io.on('connection', (socket) => { 
+    console.log('a client is connected');
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
+    });
+    setInterval(() => {
+        socket.emit('number', parseInt(Math.random()*10));
+    }, 1000);
+});
 
-app.listen(port,()=>{
-    console.log(`Express server started. App listening on port ${port}`)
+// Start the server
+var port = process.env.PORT || 3000;
+
+http.listen(port, () => {
+    console.log(`Express server started. App listening on port ${port}`);
 });
