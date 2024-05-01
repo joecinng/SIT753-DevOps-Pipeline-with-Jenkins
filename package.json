@@ -1,5 +1,5 @@
 {
-  "name": "sit725-2024-t1-prac7",
+  "name": "sit725-2024-t1-prac8",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joecinng/sit725-2024-t1-prac7.git"
+    "url": "git+https://github.com/joecinng/sit725-2024-t1-prac8.git"
   },
   "author": "Joe Cin NG",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/joecinng/sit725-2024-t1-prac7/issues"
+    "url": "https://github.com/joecinng/sit725-2024-t1-prac8/issues"
   },
-  "homepage": "https://github.com/joecinng/sit725-2024-t1-prac7#readme",
+  "homepage": "https://github.com/joecinng/sit725-2024-t1-prac8#readme",
   "dependencies": {
     "chai": "^4.4.1",
     "express": "^4.18.3",
