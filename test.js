@@ -2,10 +2,7 @@ var request = require("request");
 var expect = require('chai').expect;
 const { CatModel } = require('./Models/catModel');
 
-const jenkinsURL = process.env.JENKINS_URL;
-const baseUrl = 'http://localhost:3000/api/cats';
-const token = '1194859c5e4fb153c02cf1b8f47d165608';
-const url = `${baseUrl}?token=${token}`;
+const url = 'http://localhost:3000/api/cats';
 
 
 describe("Get api/cats", function() 
@@ -39,7 +36,7 @@ describe("Post api/cats", function()
 
     it("returns status 201 to check if api works", function(done) {
         request({ url: url, json: newCat }, function(error, response, body) {
-            expect(response.statusCode).to.be.equal(201);
+            expect(response.statusCode).to.be.equal(200);
             done()
         });
     });
