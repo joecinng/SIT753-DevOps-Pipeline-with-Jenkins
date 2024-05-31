@@ -2,7 +2,7 @@ var request = require("request");
 var expect = require('chai').expect;
 const { CatModel } = require('./Models/catModel');
 const jenkinsURL = process.env.JENKINS_URL;
-const url = 'http://localhost:3000/' + "api/cats";
+const url = jenkinsURL + "api/cats";
 
 describe("Get api/cats", function() 
 {
