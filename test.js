@@ -9,12 +9,6 @@ describe("Get api/cats", function()
 {
     it("returns status 200 to check if api works", function(done) {
         request({ url: url }, function(error, response, body) {
-            console.log(url);
-            console.log("error: "+ error);
-            console.log("response: "+response);
-            console.log("body: "+ body);
-            body = JSON.parse(body);
-            console.log("message: "+ body.message);
             expect(response.statusCode).to.be.equal(200);
             done()
         });
@@ -35,14 +29,14 @@ describe("Post api/cats", function()
     var newCat = new CatModel("Kitten test", "brown", "http://cat.jpg", "A test kitten");
 
     it("returns status 201 to check if api works", function(done) {
-        request({ url: url, json: newCat }, function(error, response, body) {
-            expect(response.statusCode).to.be.equal(200);
+        request.post({ url: url, json: newCat }, function(error, response, body) {
+            expect(response.statusCode).to.be.equal(201);
             done()
         });
     });
 
     it("Adds a new cat", function(done) {
-        request({ url: url, json: newCat }, function(error, response, body) {
+        request.post({ url: url, json: newCat }, function(error, response, body) {
             expect(body.message).to.be.equal("Cat created successfully");
             done()
         });
