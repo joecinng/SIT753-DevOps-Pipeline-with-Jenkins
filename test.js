@@ -9,6 +9,7 @@ describe("Get api/cats", function()
     it("returns status 200 to check if api works", function(done) {
         request(url, function(error, response, body) {
             console.log(url);
+            console.log("response: "+response);
             expect(response.statusCode).to.be.equal(200);
             done()
         });
