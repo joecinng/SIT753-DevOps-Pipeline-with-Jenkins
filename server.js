@@ -44,7 +44,7 @@ io.on('connection', (socket) => {
 });
 
 // Start the server
-var port = process.env.PORT || 3000;
+var port = 3000;
 
 http.listen(port, () => {
     console.log(`Express server started. App listening on port ${port}`);
