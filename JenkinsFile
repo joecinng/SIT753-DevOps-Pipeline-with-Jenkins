@@ -1,0 +1,50 @@
+pipeline {
+    agent any 
+    stages {
+        stage("Build") {
+            steps {
+                echo 'This stage builds the code using a build automation tool to compile and package the code.'
+                echo 'Build automation tools: Maven, Apache Ant, Gradle'
+            }
+        }
+        stage ("Unit and Integration tests") {
+            steps {
+                echo "This stage runs unit tests to ensure the code functions as expected and integration tests to ensure the different components of the application work together as expected."
+                echo "Unit test tools: JUnit, pure Groovy"
+                echo "Integration test tools: CircleCI"
+            }
+            post {
+                success {
+                    emailext attachLog: true, body: "Unit and Integration tests were successful!", mimeType: 'text/html', subject: "Successful tests for Task6.1C_PipelineWithGitHubAndEmail", to: "joe5763481@gmail.com"
+                }
+                failure {
+                    emailext attachLog: true, body: "Unit and Integration tests were failed!", mimeType: 'text/html', subject: "Failed tests for Task6.1C_PipelineWithGitHubAndEmail", to: "joe5763481@gmail.com"
+                }
+            }
+        }
+        stage ("Code Quality Analysis") {
+            steps {
+                echo "This stage integrates a code analysis tool to analyse the code and ensure it meets industry standards."
+                echo "Code analysis tool: SonarQube"
+            }
+        }
+        stage ("Deploy to staging") {
+            steps {
+                echo "This stage deploys the application to a staging server."
+                echo "Staging server: AWS EC2 instance"
+            }
+        }
+        stage ("Deploy to production") {
+            steps {
+                echo "This stage deploys the application to a production server."
+                echo "Production server: AWS EC2 instance"
+            }
+        }
+        stage ('Monitoring and Alerting') {
+            steps {
+                echo "This stage monitors the application in the production for any issues"
+                echo "Production server: Datadog or New Relic"
+            }
+        }  
+    }
+}     
