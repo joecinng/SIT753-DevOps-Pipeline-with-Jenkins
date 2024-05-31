@@ -1,7 +1,7 @@
 var request = require("request");
 var expect = require('chai').expect;
 const { CatModel } = require('./Models/catModel');
-const url = "http://localhost:3000/api/cats";
+const url = "http://localhost:8083/api/cats";
 
 describe("Get api/cats", function() 
 {
