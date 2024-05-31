@@ -6,42 +6,32 @@ pipeline {
     stages {
         stage('Install Dependencies') {
             steps {
-                echo 'This stage installs all the dependencies required for the application.'
-                // Install dependencies
+                echo 'Installing dependencies...'
                 sh 'npm install'
-                sh 'npm start &'
+            }
+        }
+        stage('Start Server') {
+            steps {
+                echo 'Starting the server...'
+                sh 'node server.js &'
+                sleep 10
             }
         }
         stage('Build') {
             steps {
-                echo 'This stage compile and package the code into a zip file as a build artifact.'
+                echo 'Packaging the application to build artifact...'
                 sh 'rm -rf *.tar.gz'
                 sh 'tar czf nanogram-$BUILD_NUMBER.tar.gz node_modules server.js package.json public Controllers Models Routers Test dbConnections.js README.md .gitignore'
             }
         }
         stage('Test') {
             steps {
-                echo "This stage runs unit tests using Mocha and Chai to ensure the code functions as expected."
+                echo 'Running tests using Mocha and Chai...'
                 sh 'npm test'
             }
         }
         /*
         
-        stage ("Unit and Integration tests") {
-            steps {
-                echo "This stage runs unit tests to ensure the code functions as expected and integration tests to ensure the different components of the application work together as expected."
-                echo "Unit test tools: JUnit, pure Groovy"
-                echo "Integration test tools: CircleCI"
-            }
-            post {
-                success {
-                    emailext attachLog: true, body: "Unit and Integration tests were successful!", mimeType: 'text/html', subject: "Successful tests for Task6.1C_PipelineWithGitHubAndEmail", to: "joe5763481@gmail.com"
-                }
-                failure {
-                    emailext attachLog: true, body: "Unit and Integration tests were failed!", mimeType: 'text/html', subject: "Failed tests for Task6.1C_PipelineWithGitHubAndEmail", to: "joe5763481@gmail.com"
-                }
-            }
-        }
         stage ("Code Quality Analysis") {
             steps {
                 echo "This stage integrates a code analysis tool to analyse the code and ensure it meets industry standards."
