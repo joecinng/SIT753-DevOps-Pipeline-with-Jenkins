@@ -4,27 +4,22 @@ pipeline {
         nodejs '22.2.0'
     }
     stages {
-        stage('Example') {
-            steps {
-                sh "npm version"
-            }
-        }
         stage('Install Dependencies') {
             steps {
+                echo 'This stage installs all the dependencies required for the application.'
                 // Install dependencies
-                sh 'rm -rf *.tar.gz'
                 sh 'npm install'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'This stage compile and package the code into a zip file as a build artifact.'
+                sh 'rm -rf *.tar.gz'
                 sh 'tar czf nanogram-$BUILD_NUMBER.tar.gz node_modules server.js package.json public Controllers Models Routers Test dbConnections.js data.json README.md .gitignore'
             }
         }
         /*
-        stage('Build') {
-            steps {
-                echo 'This stage builds the code using a build automation tool to compile and package the code.'
-                // Build the Docker image
-                sh 'docker build -t my-node-app .'
-            }
-        }
+        
         stage ("Unit and Integration tests") {
             steps {
                 echo "This stage runs unit tests to ensure the code functions as expected and integration tests to ensure the different components of the application work together as expected."
