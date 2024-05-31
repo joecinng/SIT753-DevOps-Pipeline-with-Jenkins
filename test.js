@@ -1,7 +1,8 @@
 var request = require("request");
 var expect = require('chai').expect;
 const { CatModel } = require('./Models/catModel');
-const url = "http://192.168.0.183:3000/api/cats";
+const jenkinsURL = process.env.JENKINS_URL || "http://localhost:8080";
+const url = jenkinsURL + "/api/cats";
 
 describe("Get api/cats", function() 
 {
