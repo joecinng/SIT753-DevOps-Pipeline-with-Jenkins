@@ -1,11 +1,12 @@
 pipeline {
-    agent any 
-
+    agent any
+    tools {
+        nodejs '22.2.0'
+    }
     stages {
-        stage('Checkout') {
+        stage('Example') {
             steps {
-                // Clone the repository
-                git 'https://github.com/joecinng/SIT753-DevOps-Pipeline-with-Jenkins.git'
+                sh "npm version"
             }
         }
         stage('Install Dependencies') {
