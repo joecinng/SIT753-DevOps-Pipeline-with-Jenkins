@@ -19,11 +19,11 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage("Build") {
+        stage('Build') {
             steps {
                 echo 'This stage builds the code using a build automation tool to compile and package the code.'
                 // Build the Docker image
-                sh 'docker build -t joecin/SIT753-DevOps-Pipeline-with-Jenkins .'
+                sh 'docker build -t my-node-app .'
             }
         }
         stage ("Unit and Integration tests") {
