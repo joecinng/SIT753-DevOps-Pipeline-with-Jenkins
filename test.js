@@ -3,10 +3,10 @@ var expect = require('chai').expect;
 const { CatModel } = require('./Models/catModel');
 
 const jenkinsURL = process.env.JENKINS_URL;
-const url = jenkinsURL + "api/cats";
-const authHeader = {
-    'Authorization': 'Bearer 1194859c5e4fb153c02cf1b8f47d165608' // Replace YOUR_TOKEN_HERE with your actual authentication token
-};
+const baseUrl = jenkinsURL + "api/cats";
+const token = '1194859c5e4fb153c02cf1b8f47d165608';
+const url = `${baseUrl}?token=${token}`;
+
 
 describe("Get api/cats", function() 
 {
