@@ -14,7 +14,7 @@ pipeline {
                 // Install dependencies
                 sh 'rm -rf *.tar.gz'
                 sh 'npm install'
-                sh 'tar czf nanogram-$BUILD_NUMBER.tar.gz node_modules server.js package.json public'
+                sh 'tar czf nanogram-$BUILD_NUMBER.tar.gz node_modules server.js package.json public Controllers Models Routers Test dbConnections.js data.json README.md .gitignore'
             }
         }
         /*
