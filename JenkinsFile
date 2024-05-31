@@ -1,5 +1,4 @@
-pipeline {
-    agent any
+agent any
     tools {
         nodejs '22.2.0'
     }
@@ -40,7 +39,7 @@ pipeline {
                 echo 'Running SonarQube analysis...'
                 script {
                     def scannerHome = tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-                    withSonarQubeEnv('SonarQube') { // Replace 'SonarQube' with the name of your SonarQube installation in Jenkins
+                    withSonarQubeEnv('SonarQube') { // Replace 'SonarQube' with the actual name if different
                         sh "${scannerHome}/bin/sonar-scanner"
                     }
                 }
