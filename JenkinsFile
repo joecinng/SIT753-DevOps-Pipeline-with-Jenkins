@@ -18,6 +18,12 @@ pipeline {
                 sh 'tar czf nanogram-$BUILD_NUMBER.tar.gz node_modules server.js package.json public Controllers Models Routers Test dbConnections.js data.json README.md .gitignore'
             }
         }
+        stage('Test') {
+            steps {
+                echo "This stage runs unit tests using Mocha and Chai to ensure the code functions as expected."
+                sh 'npm test'
+            }
+        }
         /*
         
         stage ("Unit and Integration tests") {
