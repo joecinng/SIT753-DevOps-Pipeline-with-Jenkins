@@ -11,7 +11,7 @@ const url = `${baseUrl}?token=${token}`;
 describe("Get api/cats", function() 
 {
     it("returns status 200 to check if api works", function(done) {
-        request({ url: url }, function(error, response, body) {
+        request({ url: url, admin: token }, function(error, response, body) {
             console.log(url);
             console.log("error: "+ error);
             console.log("response: "+response);
