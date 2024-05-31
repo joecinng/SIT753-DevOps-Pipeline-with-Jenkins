@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo 'This stage compile and package the code into a zip file as a build artifact.'
                 sh 'rm -rf *.tar.gz'
-                sh 'tar czf nanogram-$BUILD_NUMBER.tar.gz node_modules server.js package.json public Controllers Models Routers Test dbConnections.js data.json README.md .gitignore'
+                sh 'tar czf nanogram-$BUILD_NUMBER.tar.gz node_modules server.js package.json public Controllers Models Routers Test dbConnections.js README.md .gitignore'
             }
         }
         stage('Test') {
