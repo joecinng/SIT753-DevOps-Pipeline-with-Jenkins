@@ -55,28 +55,6 @@ pipeline {
             }
             
         }
-
-        
-        /*
-        stage ("Deploy to staging") {
-            steps {
-                echo "This stage deploys the application to a staging server."
-                echo "Staging server: AWS EC2 instance"
-            }
-        }
-        stage ("Deploy to production") {
-            steps {
-                echo "This stage deploys the application to a production server."
-                echo "Production server: AWS EC2 instance"
-            }
-        }
-        stage ('Monitoring and Alerting') {
-            steps {
-                echo "This stage monitors the application in the production for any issues"
-                echo "Production server: Datadog or New Relic"
-            }
-        }  
-        */
     }
     post {
         always {
