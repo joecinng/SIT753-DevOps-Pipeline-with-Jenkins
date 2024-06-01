@@ -38,13 +38,17 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 echo 'Running SonarQube analysis...'
-                script {
-                    def scannerHome = tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-                    withSonarQubeEnv('SonarQube') {
-                        sh "${scannerHome}/bin/sonar-scanner -D'sonar.projectKey=local-project' -D'sonar.sources=.' -D'sonar.host.url=http://localhost:9000' -D'sonar.token=sqp_df048c9432d298001e2e76da13d26c422ecfba36'"
-                    }
+                withSonarQubeEnv('SonarQube') {
+                    sh '''
+                        /var/jenkins_home/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarScanner/bin/sonar-scanner \
+                        -Dsonar.projectKey=local-project \
+                        -Dsonar.sources=. \
+                        -Dsonar.host.url=http://sonarqube:9000 \
+                        -Dsonar.login=${env.SONAR_AUTH_TOKEN}
+                    '''
                 }
             }
+            
         }
         /*
         
