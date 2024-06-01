@@ -46,7 +46,7 @@ pipeline {
                         #!/bin/bash
                         echo "Running SonarQube analysis..."
                         /var/jenkins_home/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarScanner/bin/sonar-scanner \
-                        -Dsonar.projectKey=local-project \
+                        -Dsonar.projectKey=SIT753-DevOps-Pipeline-with-Jenkins \
                         -Dsonar.sources=. \
                         -Dsonar.host.url=http://192.168.220.1:9000 \
                         -Dsonar.login=${SONAR_AUTH_TOKEN}
