@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        SONAR_AUTH_TOKEN = 'sqp_1e81ca67b39b85e12c6f4d7e38a12822165574aa'
+    }
     tools {
         nodejs '22.2.0'
     }
