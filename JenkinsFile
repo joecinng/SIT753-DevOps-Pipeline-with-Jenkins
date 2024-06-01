@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        SONAR_AUTH_TOKEN = 'sqp_1e81ca67b39b85e12c6f4d7e38a12822165574aa'
+        SONAR_AUTH_TOKEN = credentials('SonarQube-token')
     }
     tools {
         nodejs '22.2.0'
@@ -41,7 +41,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 echo 'Running SonarQube analysis...'
-                withSonarQubeEnv('SonarQube') {
+                withCredentials([string(credentialsId: 'Your_SonarQube_Token_ID', variable: 'SONAR_AUTH_TOKEN')]) {
                     sh '''
                         #!/bin/bash
                         echo "Running SonarQube analysis..."
@@ -49,11 +49,10 @@ pipeline {
                         -Dsonar.projectKey=local-project \
                         -Dsonar.sources=. \
                         -Dsonar.host.url=http://192.168.220.1:9000 \
-                        -Dsonar.login=${SONAR_AUTH_TOKEN}
+                        -Dsonar.login=$SONAR_AUTH_TOKEN
                     '''
                 }
             }
-            
         }
         /*
         
