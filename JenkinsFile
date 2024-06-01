@@ -39,8 +39,9 @@ pipeline {
             steps {
                 echo 'Running SonarQube analysis...'
                 script {
-                    withSonarQubeEnv('SonarQube') { // Replace 'SonarQube' with the actual name if different
-                        sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+                    def scannerHome = tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+                    withSonarQubeEnv('SonarQube') {
+                        sh "${scannerHome}/bin/sonar-scanner -D'sonar.projectKey=local-project' -D'sonar.sources=.' -D'sonar.host.url=http://localhost:9000' -D'sonar.token=sqp_df048c9432d298001e2e76da13d26c422ecfba36'"
                     }
                 }
             }
