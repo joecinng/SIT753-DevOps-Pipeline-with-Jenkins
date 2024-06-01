@@ -55,14 +55,9 @@ pipeline {
             }
             
         }
-        /*
+
         
-        stage ("Code Quality Analysis") {
-            steps {
-                echo "This stage integrates a code analysis tool to analyse the code and ensure it meets industry standards."
-                echo "Code analysis tool: SonarQube"
-            }
-        }
+        /*
         stage ("Deploy to staging") {
             steps {
                 echo "This stage deploys the application to a staging server."
