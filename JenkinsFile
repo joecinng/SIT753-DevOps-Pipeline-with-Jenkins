@@ -58,6 +58,8 @@ pipeline {
             steps {
                 echo "This stage deploys the application to a staging server."
                 echo "Staging server: Docker"
+                sh 'docker build -t my-app:latest .'
+                
             }
         }
         /*
