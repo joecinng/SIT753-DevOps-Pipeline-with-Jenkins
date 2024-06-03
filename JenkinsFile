@@ -58,8 +58,10 @@ pipeline {
             steps {
                 echo "This stage deploys the application to a staging server."
                 echo "Staging server: Docker"
+                sh 'nohup dockerd &'
+                // Wait for Docker daemon to start
+                sleep(time: 10, unit: 'SECONDS')
                 sh 'docker build -t my-app:latest .'
-                
             }
         }
         /*
