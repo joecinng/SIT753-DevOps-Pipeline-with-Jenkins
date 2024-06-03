@@ -22,7 +22,7 @@ pipeline {
             steps {
                 echo 'Starting the server...'
                 sh 'node server.js &'
-                sleep 10
+                sleep 5
             }
         }
         stage('Build') {
